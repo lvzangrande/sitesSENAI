@@ -1,0 +1,61 @@
+*{
+    padding: 0px;
+    margin: 0px;
+}
+body{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    background:linear-gradient(45deg ,#9251ac,#68119b);
+    color:#fff;
+    text-align: center;
+}
+header{
+    height: 100px;
+    width: 100%;
+    background-color: #6551ac;
+}
+
+header p{
+    color: #fff000;
+    
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    padding: 30px;
+    font-size: 30px;
+    
+    text-shadow: 0px 0px 10px;
+}
+
+.voltar{
+    background-color: #68119b;
+    color: #fff000;
+    text-decoration: none;
+
+    text-align: center;
+    margin: 100px;
+    padding: 11px;
+    border-radius: 50px;
+}
+
+.formulario{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin: 50px;
+    margin-top:80px;
+    
+    background-color: #68119b;
+    border-radius:30px ;
+    padding: 100px;
+    margin-left: 680px;
+    width: 350px;
+}
+
+.formulario input{
+    border: none;
+    margin: 20px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+}
