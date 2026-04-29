@@ -15,9 +15,12 @@
     <div class="formulario">
         <label>Insira as informações da música:</label>
             <form action="" method="POST">
-                <input type="text" placeholder="Nome da música">
-                <input type="text" placeholder="Nome do artista">
-                <input type="text" placeholder="Gênero da música">
+                <input type="text" placeholder="Nome da música" name="musica">
+                <input type="text" placeholder="Nome do artista" name="artista">
+                <input type="text" placeholder="Gênero da música" name="genero">
+                <button type="submit">
             </form>
+
+
 </body>
 </html>
