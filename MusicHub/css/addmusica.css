@@ -60,3 +60,7 @@ header p{
     display: flex;
     flex-direction: column;
 }
+.formulario label{
+    font-size: 21px;
+    margin: 20px;
+}

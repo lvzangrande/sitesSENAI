@@ -18,7 +18,7 @@
                 <input type="text" placeholder="Nome da música" name="musica">
                 <input type="text" placeholder="Nome do artista" name="artista">
                 <input type="text" placeholder="Gênero da música" name="genero">
-                <button type="submit">
+                <button type="submit">Adicionar</button>
             </form>
 
 
