@@ -19,7 +19,7 @@
             <div class="title_card">
                 <p>VISUALIZAR MÚSICAS<p>
             </div>
-            <a href=""><!--Não esquece de linkar-->
+            <a href="vermusicas.php">
                 <img src="https://www.svgrepo.com/show/282865/musical-note-music.svg" width=300px>
             </a>
         </div>

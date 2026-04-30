@@ -6,21 +6,39 @@
     <link rel="stylesheet" href="./css/addmusica.css">
     <title>Adicionar músicas</title>
 </head>
-    <?php
-     require_once './partials/header.php';
-    ?>
 <body>
-    <a href="index.php" class="voltar">VOLTAR<a>
+    <?php require_once './partials/header.php'; ?>
+
+    <a href="index.php" class="voltar">VOLTAR</a>
     <br>
     <div class="formulario">
         <label>Insira as informações da música:</label>
-            <form action="" method="POST">
-                <input type="text" placeholder="Nome da música" name="musica">
-                <input type="text" placeholder="Nome do artista" name="artista">
-                <input type="text" placeholder="Gênero da música" name="genero">
-                <button type="submit">Adicionar</button>
-            </form>
+        <form action="addmusica.php" method="POST">
+            <input type="text" placeholder="Nome da música" name="musica" required>
+            <input type="text" placeholder="Nome do artista" name="artista" required>
+            <input type="text" placeholder="Gênero da música" name="genero" required>
+            <input type="number" placeholder="Duração em segundos" name="segundos" required>
+            <button type="submit">Adicionar</button>
+        </form>
 
+        <?php
+        require_once 'crud.php';
 
+        if ($_SERVER['REQUEST_METHOD'] === 'POST') {            
+            $novaMusica = [
+                'musica'   => $_POST['musica'] ?? '',
+                'artista'  => $_POST['artista'] ?? '', 
+                'segundos' => $_POST['segundos'] ?? '',
+                'genero'   => $_POST['genero'] ?? ''
+            ];
+
+            $idMusicaNova = create($pdo, 'musicas', $novaMusica); 
+            
+            if ($idMusicaNova) {
+                echo '<p style="color: green;">Nova música inserida com o ID: ' . $idMusicaNova . '</p>';
+            }
+        }
+        ?>
+    </div>
 </body>
 </html>
