@@ -37,21 +37,30 @@ header p{
     border-radius: 50px;
 }
 
-.tabela{
+.formulario{
     display: flex;
-    align-items: center;
     justify-content: center;
-    padding-top: 40px;
+    align-items: center;
+    flex-direction: column;
+    margin: 50px;
+    margin-top:80px;
+    
+    background-color: #68119b;
+    border-radius:30px ;
+    padding: 100px;
+    margin-left: 680px;
+    width: 350px;
 }
 
-td,tr{
-    text-align: center;
-    padding: 10px;
-    background-color: #68119b;
-}
-th{
-    text-align: center;
-    padding: 10px;
-    background-color: #fff000;
+.formulario input{
     color: #68119b;
+    border: none;
+    margin: 20px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+}
+.formulario label{
+    font-size: 2px;
+    margin: 20px;
 }

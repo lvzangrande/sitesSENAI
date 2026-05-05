@@ -9,6 +9,7 @@
 <?php
     require_once './partials/header.php';
 ?>
+<a href="index.php" class="voltar">VOLTAR</a>
 <body>
 <div class="tabela">
     <table>
@@ -16,7 +17,8 @@
             <th>Nome da música</th>
             <th>Artista</th>
             <th>Duração</th>
-            <th>Gênero<th>
+            <th>Gênero</th>
+            <th>Editar</th>
         </tr>
 <?php 
     require_once 'crud.php';
@@ -24,10 +26,13 @@
     $musicas = readAll($pdo,'musicas');
 //print_r($musicas);
 foreach($musicas as $musica){
-    echo "<tr><td>".$musica['musica']."</td>
-    <td>".$musica['artista']."</td>
-    <td>".$musica['segundos']."</td>
-    <td>".$musica['genero']."</td></tr>";
+    echo "<tr>
+            <td>".$musica['musica']."</td>
+            <td>".$musica['artista']."</td>
+            <td>".$musica['segundos']."</td>
+            <td>".$musica['genero']."</td>
+            <td><a href='editarmusicas.php?id=".$musica['id_musica']."'><img src='https://cdn-icons-png.flaticon.com/512/5996/5996831.png' width=18px></a></td>
+          </tr>";
 }
 ?>
     </table>
