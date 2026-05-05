@@ -8,6 +8,7 @@ echo "<table border=1>
 <th>ID</th>
 <th>Título</th>
 </tr>";
+    
 $livros = readAll($pdo,'livros');
 //print_r($livros);
 foreach($livros as $livro){
@@ -17,7 +18,7 @@ foreach($livros as $livro){
 echo "<table>";
 
 //consultar banco
-$livro = read($pdo, 'livros','id = 301');
+$livro = read($pdo, 'livros',$_POST['livro']['id']);
 if($livro){
-    echo '<p>O livro em questão é:'.$livro['titulo'].'</p>';
+    echo "<p>Mostrando".$_POST['livro']['titulo'].$_POST['livro']['capa']."2</p>";
 }
