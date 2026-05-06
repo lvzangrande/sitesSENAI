@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css.css">
+    <link rel="stylesheet" href="css.css">
     <title>Adicionar cartas</title>
 </head>
 <body>
@@ -18,7 +19,8 @@
                 <option>ARMADILHA</option>
                 <option>FUSÃO</option>
             </select>
-            <input type="number" name="nivel">
+
+            <input type="number" placeholder="Nível do monstro" name="nivel" min="1" max="12">
             
             <select name="atributo" required>
                 <option>Selecione o atributo</option>
@@ -35,7 +37,9 @@
 
             <input type="text" placeholder="Descrição da carta" name="descricao" required>
             <input type="text" placeholder="Subtipo da carta" name="subtipo">
+            
             <input type="file" accept="image/*" name="img" required>
+            
             <button type="submit">Adicionar Carta</button>
         </form>
     </div>

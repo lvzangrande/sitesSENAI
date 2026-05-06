@@ -1,0 +1,55 @@
+body{
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    background-color:#140327 ;
+}
+input, select{
+    background-color:#1f033f;
+    border: none;
+    padding: 10px;
+    color: #b69321;
+}
+input::placeholder{
+    color: #b69321;
+}
+.form{
+    margin-top: 50px;
+    padding: 50px;
+    width: 450px;
+    height: 600px;
+
+    background-image:
+    linear-gradient(rgba(0,0,0,0.6),
+    rgba(0,0,0,0.4)),
+     url(img/versocarta.jpg);
+    background-position: center;
+    background-repeat: none;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+}
+.form input, select{
+    margin: 30px;
+    display: flex;
+    flex-direction: column;
+    width: 200px;
+    height: 35px;
+    text-align: center;
+}
+
+button{
+    margin-left: 70px;
+    background-color: #b69321;
+    color: aliceblue;
+    padding: 25px;
+    border-radius: 30px;
+    border: none;
+}
+
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button{
+    -webkit-appearance: none;
+}
