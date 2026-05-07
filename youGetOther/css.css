@@ -5,14 +5,34 @@ body{
     flex-direction: column;
     margin: 0 auto;
     background-color:#140327 ;
+    color: aliceblue;
+
+    font-family: sans-serif ;
 }
+label{
+    font-size:16px;
+    color: #b69321;
+}
+
 header{
-    font-size: 30px;
+    font-size: 20px;
     text-decoration: none;
-    
-    background-color: aqua;
+
+    background-color: #3f077e;
     width:100%;
     height: 100px;
+    margin-bottom: 50px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+header a{
+
+    font-weight: bold;
+    color: #b69321;
+    text-decoration: none;
+    margin: 20px;
     margin-bottom: 50px;
 }
 /*home*/
@@ -21,6 +41,7 @@ table{
     color: #b69321;
     border: none;
     text-align: center;
+    margin: 80px;
 }
 
 table th{
@@ -42,6 +63,7 @@ input::placeholder{
     color: #b69321;
 }
 .form{
+    border: solid 4px #b69321;
     margin-top: 50px;
     padding: 50px;
     width: 550px;

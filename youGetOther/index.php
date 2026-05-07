@@ -10,8 +10,10 @@
 <header>
     <nav>
         <a href="index.php">Página incial</a>
-        <img src="./img/logo.png">
+        <a href="excluirCarta.php">Excluir carta</a>
+        <img src="./img/logo.png" width="150">
         <a href="adicionarCarta.php">Nova carta</a>
+        <a href="editarCarta.php">Editar carta</a>
     </nav>
 </header>
 
