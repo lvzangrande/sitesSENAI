@@ -9,7 +9,8 @@
 </head>
 <body>
     <div class="form">
-        <form action="insert.php" method="POST" required enctype="multipart/form-data">
+
+        <form action="adicionarCarta.php" method="POST" required enctype="multipart/form-data">
             <input type="text" placeholder="Nome da carta" name="nome" required>
             
             <select name="tipo_carta" required>
@@ -21,7 +22,7 @@
             </select>
 
             <input type="number" placeholder="Nível do monstro" name="nivel" min="1" max="12">
-            
+
             <select name="atributo" required>
                 <option>Selecione o atributo</option>
                 <option>MAGIA</option>
@@ -39,7 +40,10 @@
             <input type="text" placeholder="Subtipo da carta" name="subtipo">
             
             <input type="file" accept="image/*" name="img" required>
-            
+
+            <input type="number" placeholder="Ataque do monstro" name="atk">
+            <input type="number" placeholder="Defesa do monstro" name="def">
+
             <button type="submit">Adicionar Carta</button>
         </form>
     </div>

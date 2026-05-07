@@ -1,26 +1,17 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Página inicial</title>
-    <link rel="stylesheet" href="css.css">
+    <title>Document</title>
 </head>
 <body>
-<header>
-    <nav>
-        <a href="index.php">Página incial</a>
-        <img src="./img/logo.png">
-        <a href="adicionarCarta.php">Nova carta</a>
-    </nav>
-</header>
-
 <?php
 require_once 'crud.php';
 //select
 
 //exibe uma tabela com os dados do banco
-echo "<table>
+echo "<table border=1>
 <tr>
 <th>ID</th>
 <th>Título</th>
@@ -38,8 +29,8 @@ $tablecartas = readAll($pdo,'cartas');
 foreach($tablecartas as $carta){
 
     echo "<tr>
-            <td>".$carta['id']."</td>
-            <td>".$carta['nome']."</td>
+            <td>ID: ".$carta['id']."</td>
+            <td>Título: ".$carta['nome']."</td>
             <td>".$carta['tipo_carta']."</td>
             <td><img src='".$carta['img']."' width='150'></td>
             <td>".$carta['descricao']."</td>
