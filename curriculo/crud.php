@@ -1,16 +1,14 @@
 <?php
-
-// Configurações de conexão com o banco de dados (ajuste conforme sua configuração)
-$host = "localhost";//host do banco
-$port = 3306;//porta do banco
-$dbname = "db_2td";//nome do banco
-$username = "zan";//usuário do banco
-$password = "123";//senha
-
+$host = "localhost";
+$port = 3306;
+$dbname = "curriculo_db";
+$username = "root";
+$password = "123";
+    
 try {
     $pdo = new PDO("mysql:host=$host;port=$port;dbname=$dbname", $username, $password);
     $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-
+    
     // Função para inserir um novo registro
     function create($pdo, $table, array $data) {
         $columns = implode(', ', array_keys($data));
@@ -18,7 +16,7 @@ try {
 
         $sql = "INSERT INTO $table ($columns) VALUES ($placeholders)";
         $stmt = $pdo->prepare($sql);
-        $stmt-> execute(array_values($data));
+        $stmt->execute(array_values($data));
         return $pdo->lastInsertId();
     }
 
@@ -41,6 +39,21 @@ try {
         return $stmt->fetch(PDO::FETCH_ASSOC);
     }
 
+    //pegar nome via id
+function read_nome_via_ID($pdo, $table, $id) {
+
+    $sql = "SELECT nome FROM $table WHERE id_user = :id";
+
+    $stmt = $pdo->prepare($sql);
+
+    $stmt->execute([
+        ':id' => $id
+    ]);
+
+    $resultado = $stmt->fetch(PDO::FETCH_ASSOC);
+
+    return $resultado ? $resultado['nome'] : "Desconhecido";
+}
     // Função para atualizar um registro
     function update($pdo, $table, array $data, $where) {
         $set = [];
@@ -61,7 +74,6 @@ try {
         $stmt = $pdo->prepare($sql);
         return $stmt->execute();
     }
-
 } catch (PDOException $e) {
     die("Erro de conexão: " . $e->getMessage());
 }
