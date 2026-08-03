@@ -28,10 +28,26 @@ foreach($dados_pessoais as $info_user){
 
             <input type="file" name="img_user"> 
 
-            
-
             <button type="submit">
                 Salvar Alterações
             </button>
+<?php
+    if (isset($_FILES['img_user']) && $_FILES['img_user']['error'] === UPLOAD_ERR_OK) {
+        $nome_foto = $_FILES['img_user']['name'];
+        
+        if (move_uploaded_file($_FILES['img_user']['tmp_name'], "../img/uploads/usuarios/clientes/" . $nome_foto)) {
+            $dadosAtualizados['img_user'] = $nome_foto;
+        }
+    }
+
+    $linhasAfetadas = update($pdo, 'dados_pessoais', "img_user = $idUser");
+
+    if ($linhasAfetadas > 0) {
+        echo '<script>alert("Usuário atualizado com sucesso!!!"); window.location.href="userpage.php";</script>';
+        exit();
+    } else {
+        echo '<script>alert("Nenhuma alteração foi feita ou erro ao atualizar!");</script>';
+    }
+?>
 </body>
 </html>
