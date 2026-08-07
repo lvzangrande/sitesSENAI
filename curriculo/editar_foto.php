@@ -40,7 +40,7 @@ foreach($dados_pessoais as $info_user){
         }
     }
 
-    $linhasAfetadas = update($pdo, 'dados_pessoais', "img_user = $idUser");
+    $linhasAfetadas = update($pdo, 'dados_pessoais', $foto,"img_user = foto_default.jpg AND nome = " . $info_user['nome']);
 
     if ($linhasAfetadas > 0) {
         echo '<script>alert("Usuário atualizado com sucesso!!!"); window.location.href="userpage.php";</script>';

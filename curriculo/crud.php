@@ -3,7 +3,7 @@ $host = "localhost";
 $port = 3306;
 $dbname = "curriculo_db";
 $username = "root";
-$password = "123";
+$password = "123";//123
     
 try {
     $pdo = new PDO("mysql:host=$host;port=$port;dbname=$dbname", $username, $password);
